@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
-import { loadTask } from '../redux/todoSlice';
+import { loadTask } from "../redux/todoSlice";
 
 const TodoApp = () => {
   const [taskTitle, setTaskTitle] = useState("");
@@ -17,11 +17,11 @@ const TodoApp = () => {
   };
 
   useEffect(() => {
-    const todoList = localStorage.getItem('todoList');
-    if(todoList) {
-        dispatch(loadTask(JSON.parse(todoList)))
-    }else{
-        localStorage.setItem('todoList', [])
+    const todoList = localStorage.getItem("todoList");
+    if (todoList) {
+      dispatch(loadTask(JSON.parse(todoList)));
+    } else {
+      localStorage.setItem("todoList", []);
     }
   }, []);
 
